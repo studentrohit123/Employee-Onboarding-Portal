@@ -1,0 +1,12 @@
+
+<% if current_user %>
+  <h2> <%= current_user.email%> </h2>
+  <%= link_to "Edit Account", edit_user_registration_path %> 
+   <%= link_to "Logout", users_sign_out_path, class: 'nav-link' %>
+<%else%>
+  <%= link_to "Signin", new_user_session_path %>
+  <%= link_to "Create Account", new_user_registration_path %>
+<%end%>
+
+
+

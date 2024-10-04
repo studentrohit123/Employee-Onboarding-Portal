@@ -24,27 +24,27 @@
 
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+    <%= f.text_field :first_name, autocomplete: "first_name" %>
   </div>
 
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :phone_number %><br />
-    <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
+    <%= f.text_field :last_name, autocomplete: "last_name" %>
   </div>
 
   <div class="field">
     <%= f.label :role %><br />
-    <%= f.text_field :role, autofocus: true, autocomplete: "role" %>
+    <%= f.text_field :role, autocomplete: "role" %>
+  </div>
+
+ <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.password_field :phone_number, autocomplete: "phone_number" %>
   </div>
 
   <div class="field">
     <%= f.label :date_of_joining %><br />
-    <%= f.text_field :date_of_joining, autofocus: true, autocomplete: "date_of_joining" %>
+    <%= f.password_field :date_of_joining, autocomplete: "date_of_joining" %>
   </div>
 
   <div class="actions">

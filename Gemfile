@@ -67,3 +67,9 @@ group :test do
 end
 
 gem 'devise'
+
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'  
+# gem 'omniauth-linkedin-oauth2'
+
