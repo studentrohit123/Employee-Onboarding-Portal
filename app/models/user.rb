@@ -4,10 +4,9 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2]
 
   def self.from_omniauth(auth)
-    byebug
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.info.email
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.department = auth.info.department
@@ -18,13 +17,3 @@ class User < ApplicationRecord
     end
   end
 end
-
-
-# def self.from_omniauth(auth)
-#   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-#     user.email = auth.info.email
-#     user.password = Devise.friendly_token[0,20]
-#     user.fullname = auth.info.name
-#     user.avatar_url = auth.info.image
-#   end
-# end
