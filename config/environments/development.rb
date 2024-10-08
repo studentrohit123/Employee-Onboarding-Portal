@@ -79,4 +79,14 @@ Rails.application.configure do
   # config/environments/development.rb
   config.log_level = :debug
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :port => "587",
+    :domain => "mydomain.net",
+    :user_name => "rsen@bestpeers.com",
+    :password => "eiys hady smql hbfo",
+    :authentication => "plain",
+    :enable_starttls_auto => true
+  } 
 end

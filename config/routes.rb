@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' , sessions: 'users/sessions'}
 
   root to: 'homepages#index'
   # devise_for, :users, contollers: {
@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   # }
 
   devise_scope :user do  
-    get '/users/sign_out' => 'devise/sessions#destroy'     
+    get '/users/sign_out' => 'devise/sessions#destroy'   
+    get 'users/verify_two_factor', to: 'users/sessions#verify_two_factor'
+    post 'users/verify_two_factor', to: 'users/sessions#verify_two_factor'  
   end
 end
+
