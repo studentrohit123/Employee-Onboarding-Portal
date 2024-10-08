@@ -33,11 +33,21 @@
   </div>
 
   <div class="field">
+    <%= f.label :department %><br />
+    <%= f.text_field :department, autocomplete: "department" %>
+  </div>
+
+  <div class="field">
     <%= f.label :role %><br />
     <%= f.text_field :role, autocomplete: "role" %>
   </div>
 
- <div class="field">
+  <div class="field">
+    <%= f.label :onboarding_status %><br />
+    <%= f.text_field :onboarding_status, autocomplete: "onboarding_status" %>
+  </div>
+
+  <div class="field">
     <%= f.label :phone_number %><br />
     <%= f.password_field :phone_number, autocomplete: "phone_number" %>
   </div>
