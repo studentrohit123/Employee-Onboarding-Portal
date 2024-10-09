@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' , sessions: 'users/sessions'}
 
   root to: 'homepages#index'
+  resources :homepages
   # devise_for, :users, contollers: {
   # registrations: 'users/registrations', # This controller handles actions related to user sign-up and account management.
   # session: 'users/sessions', # This controller handles actions related to user sign-in and sign-out.
