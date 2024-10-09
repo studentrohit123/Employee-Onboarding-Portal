@@ -77,3 +77,5 @@ gem 'omniauth-linkedin-oauth2'
 gem 'dotenv-rails', groups: [:development, :test]
 
 gem "omniauth-rails_csrf_protection"
+
+gem 'devise-two-factor'

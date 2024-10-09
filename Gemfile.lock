@@ -107,6 +107,11 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-two-factor (6.0.0)
+      activesupport (~> 7.0)
+      devise (~> 4.0)
+      railties (~> 7.0)
+      rotp (~> 6.0)
     dotenv (3.1.4)
     dotenv-rails (3.1.4)
       dotenv (= 3.1.4)
@@ -260,6 +265,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     rexml (3.3.8)
+    rotp (6.3.0)
     rubyzip (2.3.2)
     selenium-webdriver (4.25.0)
       base64 (~> 0.2)
@@ -337,6 +343,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  devise-two-factor
   dotenv-rails
   importmap-rails
   jbuilder

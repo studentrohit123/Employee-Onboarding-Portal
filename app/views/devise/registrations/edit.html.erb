@@ -31,6 +31,12 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <!-- app/views/devise/registrations/edit.html.erb -->
+  <div class="field">
+    <%= label :two_factor_enabled, "Enable Two-Factor Authentication" %>
+    <%= check_box :two_factor_enabled, checked: current_user.two_factor_enabled? %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

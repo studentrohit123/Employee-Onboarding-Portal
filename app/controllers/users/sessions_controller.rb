@@ -3,10 +3,9 @@ class Users::SessionsController < Devise::SessionsController
 
   def check_two_factor_auth
     user = User.find_by(email: params[:user][:email])
-    if user && user.valid_password?(params[:user][:password]) && user.two_factor_enabled?
+    if user && user.valid_password?(params[:user][:password])
       user.generate_two_factor_code
       UserMailer.send_two_factor_code(user).deliver_now
-      byebug
       redirect_to users_verify_two_factor_path(user_id: user.id)
     end
   end
