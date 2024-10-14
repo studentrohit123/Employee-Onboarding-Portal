@@ -1,3 +1,4 @@
+
 databases:
   - name: Employee-Onboarding-Portal
     databaseName: Employee-Onboarding-Portal
@@ -9,15 +10,16 @@ services:
     name: mysite
     runtime: ruby
     plan: free
-    buildCommand: "./bin/render-build.sh"
-    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
+    buildCommand: |
+      bundle install
+      bundle exec rails db:migrate # Run migrations during the build step
     startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: Employee-Onboarding-Portal
           property: connectionString
-            - key: RAILS_MASTER_KEY
+      - key: RAILS_MASTER_KEY
         sync: false
       - key: WEB_CONCURRENCY
-        value: 2 # sensible default
+        value: 2
