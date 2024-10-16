@@ -1,18 +1,14 @@
-
 databases:
   - name: Employee-Onboarding-Portal
-    databaseName: Employee-Onboarding-Portal
-    user: Rohit
     plan: free
+    user: onboarding_user
 
 services:
   - type: web
-    name: mysite
-    runtime: ruby
+    name: Employee-Onboarding-Portal
+    env: ruby
     plan: free
-    buildCommand: |
-      bundle install
-      bundle exec rails db:migrate # Run migrations during the build step
+    buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
@@ -22,4 +18,4 @@ services:
       - key: RAILS_MASTER_KEY
         sync: false
       - key: WEB_CONCURRENCY
-        value: 2
+        value: 2 # sensible default
