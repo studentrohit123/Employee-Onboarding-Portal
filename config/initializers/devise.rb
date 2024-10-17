@@ -314,4 +314,5 @@ Devise.setup do |config|
   config.omniauth :google_oauth2, 
     Rails.application.credentials.dig(:google_oauth_client_id),
     Rails.application.credentials.dig(:google_oauth_client_secret)
+
 end
